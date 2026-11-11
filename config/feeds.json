@@ -1,0 +1,12 @@
+[
+  { "id": "ynet", "name": "Ynet", "lang": "he", "category": "israel", "url": "https://www.ynet.co.il/Integration/StoryRss2.xml" },
+  { "id": "walla", "name": "Walla", "lang": "he", "category": "israel", "url": "https://rss.walla.co.il/feed/1" },
+  { "id": "maariv", "name": "Maariv", "lang": "he", "category": "israel", "url": "https://www.maariv.co.il/Rss/RssFeedsMivzakiChadashot" },
+  { "id": "toi", "name": "Times of Israel", "lang": "en", "category": "world", "url": "https://www.timesofisrael.com/feed/" },
+  { "id": "jpost", "name": "Jerusalem Post", "lang": "en", "category": "world", "url": "https://www.jpost.com/Rss/RssFeedsFrontPage.aspx" },
+  { "id": "hn", "name": "Hacker News", "lang": "en", "category": "tech", "url": "https://hnrss.org/frontpage" },
+  { "id": "geektime", "name": "Geektime", "lang": "he", "category": "tech", "url": "https://www.geektime.co.il/feed/" },
+  { "id": "calcalist", "name": "Calcalist", "lang": "he", "category": "finance", "url": "https://www.calcalist.co.il/GeneralRSS/0,16335,L-8,00.xml" },
+  { "id": "globes", "name": "Globes", "lang": "he", "category": "finance", "url": "https://www.globes.co.il/webservice/rss/rssfeeder.asmx/FeederNode?iID=2" },
+  { "id": "yahoofin", "name": "Yahoo Finance", "lang": "en", "category": "finance", "url": "https://finance.yahoo.com/news/rssindex" }
+]

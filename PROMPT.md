@@ -4,7 +4,7 @@ Rules: see CLAUDE.md in this folder. Commit after each task. If blocked, note it
 "Needs owner" and move to the next task. Stop when everything is [x] or usage cap is hit.
 
 ## Tasks
-- [ ] Run `npm run fetch:dry`. For every FAIL feed, find the correct current RSS URL (web search),
+- [x] (2026-11-11) Run `npm run fetch:dry`. For every FAIL feed, find the correct current RSS URL (web search),
       fix config/feeds.json, re-run until all feeds OK (or mark a feed `"disabled": true` with a comment why).
 - [ ] Add 2-3 more quality feeds the owner would like based on his picks: Israeli business/stocks
       (e.g. TheMarker/Bizportal if they have RSS) and one more tech source. Verify with fetch:dry.
@@ -23,3 +23,4 @@ Rules: see CLAUDE.md in this folder. Commit after each task. If blocked, note it
 
 ## Needs owner
 (agents append here instead of getting stuck)
+- Calcalist RSS returns 403 to every non-browser client (feed `calcalist` disabled in config/feeds.json). Needs a different source or a proxy decision.

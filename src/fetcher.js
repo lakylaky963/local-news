@@ -2,8 +2,15 @@ import Parser from 'rss-parser';
 import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 
-const parser = new Parser({ timeout: 15000, headers: { 'User-Agent': 'local-news/0.1 (homelab feed reader)' } });
-export const feeds = JSON.parse(readFileSync(new URL('../config/feeds.json', import.meta.url)));
+const parser = new Parser({ timeout: 15000, headers: { 'User-Agent': 'Mozilla/5.0 (compatible; local-news/0.1)', 'Accept-Encoding': 'identity' } });
+export const feeds = JSON.parse(readFileSync(new URL('../config/feeds.json', import.meta.url))).filter(f => !f.disabled);
+
+// fetch() transparently handles gzip (Walla gzips unconditionally); rss-parser's own http client doesn't.
+async function fetchFeed(url) {
+  const res = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0 (compatible; local-news/0.1)' }, signal: AbortSignal.timeout(15000) });
+  if (!res.ok) throw new Error('Status code ' + res.status);
+  return parser.parseString(await res.text());
+}
 
 const hash = s => createHash('sha1').update(s).digest('hex');
 
@@ -13,7 +20,7 @@ export async function refreshAll(db) {
   for (const feed of feeds) {
     const started = new Date();
     try {
-      const parsed = await parser.parseURL(feed.url);
+      const parsed = await fetchFeed(feed.url);
       let added = 0;
       for (const it of (parsed.items || []).slice(0, 50)) {
         const link = it.link || it.guid;
@@ -52,7 +59,7 @@ export async function dryRun() {
   let ok = 0;
   for (const feed of feeds) {
     try {
-      const parsed = await parser.parseURL(feed.url);
+      const parsed = await fetchFeed(feed.url);
       console.log(`OK   ${feed.id.padEnd(12)} ${(parsed.items || []).length} items`);
       ok++;
     } catch (e) {

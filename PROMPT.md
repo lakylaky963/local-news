@@ -14,7 +14,7 @@ Rules: see CLAUDE.md in this folder. Commit after each task. If blocked, note it
       tooltip with lastStatus. Keep the house style.
 - [x] (2026-11-11) UI: relative times in Hebrew for he items (לפני 5 ד׳ / שעה / אתמול), keep English for en.
 - [x] (2026-11-11) Improve the Hebrew stopword list in src/score.js (common news words: דיווח, בלעדי, צפו, תיעוד...).
-- [ ] If the site is live on the server: curl the /news/ route and api/stats from the server side
+- [x] (2026-11-11) If the site is live on the server: curl the /news/ route and api/stats from the server side
       (ssh root@server), confirm items are flowing; write findings in the daily note.
 - [ ] Update ../agents-ops/50-daily/<tomorrow's date>.md with a morning summary
       (finished / blocked / needs owner) and push the vault.

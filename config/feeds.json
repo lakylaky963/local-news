@@ -8,5 +8,8 @@
   { "id": "geektime", "name": "Geektime", "lang": "he", "category": "tech", "url": "https://www.geektime.co.il/feed/" },
   { "id": "calcalist", "name": "Calcalist", "lang": "he", "category": "finance", "disabled": true, "disabledReason": "403 from calcalist.co.il to all non-browser clients (checked 2026-11-11)", "url": "https://www.calcalist.co.il/GeneralRSS/0,16335,L-8,00.xml" },
   { "id": "globes", "name": "Globes", "lang": "he", "category": "finance", "url": "https://www.globes.co.il/webservice/rss/rssfeeder.asmx/FeederNode?iID=2" },
+  { "id": "themarker", "name": "TheMarker", "lang": "he", "category": "finance", "url": "https://www.themarker.com/cmlink/1.145" },
+  { "id": "ars", "name": "Ars Technica", "lang": "en", "category": "tech", "url": "https://feeds.arstechnica.com/arstechnica/index" },
+  { "id": "techcrunch", "name": "TechCrunch", "lang": "en", "category": "tech", "url": "https://techcrunch.com/feed/" },
   { "id": "yahoofin", "name": "Yahoo Finance", "lang": "en", "category": "finance", "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=^GSPC,^IXIC,AAPL,NVDA&region=US&lang=en-US" }
 ]

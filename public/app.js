@@ -6,9 +6,15 @@ let tab = 'latest';
 try { tab = localStorage.getItem('tab') || 'latest'; } catch {}
 const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-const ago = d => {
-  const m = Math.round((Date.now() - new Date(d)) / 60000);
-  return m < 60 ? `${m}m` : m < 1440 ? `${Math.round(m / 60)}h` : `${Math.round(m / 1440)}d`;
+const ago = (d, lang) => {
+  const m = Math.max(0, Math.round((Date.now() - new Date(d)) / 60000));
+  const h = Math.round(m / 60), days = Math.round(m / 1440);
+  if (lang !== 'he') return m < 60 ? `${m}m` : m < 1440 ? `${h}h` : `${days}d`;
+  if (m < 1) return 'עכשיו';
+  if (m < 60) return `לפני ${m} ד׳`;
+  if (m < 1440) return h === 1 ? 'לפני שעה' : h === 2 ? 'לפני שעתיים' : `לפני ${h} שע׳`;
+  if (days === 1) return 'אתמול';
+  return days === 2 ? 'לפני יומיים' : `לפני ${days} ימים`;
 };
 
 function renderTabs() {
@@ -40,7 +46,7 @@ function card(i) {
     <a href="${esc(i.link)}" target="_blank" rel="noopener">${esc(i.title)}</a>
     ${i.summary ? `<p dir="auto">${esc(i.summary)}</p>` : ''}
     <footer>
-      <span>${esc(i.source)} · ${ago(i.published)}${i.score !== undefined ? ` · ★${i.score}` : ''}</span>
+      <span>${esc(i.source)} · ${ago(i.published, i.lang)}${i.score !== undefined ? ` · ★${i.score}` : ''}</span>
       <span class="votes" data-id="${esc(i._id)}">
         <button data-v="1" ${i.myVote === 1 ? 'class="on"' : ''} title="עוד כאלה">👍</button>
         <button data-v="-1" ${i.myVote === -1 ? 'class="on"' : ''} title="פחות כאלה">👎</button>

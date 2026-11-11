@@ -12,7 +12,7 @@ Rules: see CLAUDE.md in this folder. Commit after each task. If blocked, note it
       rebuildProfile math with a stubbed db). Add `"test": "node --test"` script.
 - [x] (2026-11-11) UI: thin sources-status strip at the bottom (from api/sources): green/red dot per source,
       tooltip with lastStatus. Keep the house style.
-- [ ] UI: relative times in Hebrew for he items (לפני 5 ד׳ / שעה / אתמול), keep English for en.
+- [x] (2026-11-11) UI: relative times in Hebrew for he items (לפני 5 ד׳ / שעה / אתמול), keep English for en.
 - [ ] Improve the Hebrew stopword list in src/score.js (common news words: דיווח, בלעדי, צפו, תיעוד...).
 - [ ] If the site is live on the server: curl the /news/ route and api/stats from the server side
       (ssh root@server), confirm items are flowing; write findings in the daily note.

@@ -18,7 +18,7 @@ Rules: see CLAUDE.md in this folder. Commit after each task. If blocked, note it
       (ssh root@server), confirm items are flowing; write findings in the daily note.
 - [x] (2026-11-11) Update ../agents-ops/50-daily/<tomorrow's date>.md with a morning summary
       (finished / blocked / needs owner) and push the vault.
-- [ ] If homelab status changed: update ../homeLab/CLAUDE.md Status + TODO, commit as
+- [x] (2026-11-11) If homelab status changed: update ../homeLab/CLAUDE.md Status + TODO, commit as
       `brain: news site`, push.
 
 ## Needs owner

@@ -8,7 +8,7 @@ Rules: see CLAUDE.md in this folder. Commit after each task. If blocked, note it
       fix config/feeds.json, re-run until all feeds OK (or mark a feed `"disabled": true` with a comment why).
 - [x] (2026-11-11) Add 2-3 more quality feeds the owner would like based on his picks: Israeli business/stocks
       (e.g. TheMarker/Bizportal if they have RSS) and one more tech source. Verify with fetch:dry.
-- [ ] Unit tests with `node --test`: src/score.js (tokens on Hebrew+English titles, scoreItem ordering,
+- [x] (2026-11-11) Unit tests with `node --test`: src/score.js (tokens on Hebrew+English titles, scoreItem ordering,
       rebuildProfile math with a stubbed db). Add `"test": "node --test"` script.
 - [ ] UI: thin sources-status strip at the bottom (from api/sources): green/red dot per source,
       tooltip with lastStatus. Keep the house style.

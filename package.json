@@ -7,7 +7,8 @@
   "scripts": {
     "start": "node server.js",
     "fetch": "node src/fetch-once.js",
-    "fetch:dry": "node src/fetch-once.js --dry"
+    "fetch:dry": "node src/fetch-once.js --dry",
+    "test": "node --test"
   },
   "dependencies": {
     "express": "^5.1.0",

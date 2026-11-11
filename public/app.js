@@ -57,5 +57,16 @@ async function load() {
   $('#list').innerHTML = items.map(card).join('');
 }
 
+async function loadSources() {
+  const list = await fetch('api/sources').then(r => r.json()).catch(() => []);
+  $('#sources').innerHTML = list.map(s => {
+    const ok = s.lastStatus === 'ok';
+    const tip = `${s.name || s._id}: ${s.lastStatus || 'never run'}${s.lastRun ? ' · ' + new Date(s.lastRun).toLocaleString() : ''}`;
+    return `<span class="src" title="${esc(tip)}"><i class="dot ${ok ? 'ok' : 'bad'}"></i>${esc(s.name || s._id)}</span>`;
+  }).join('');
+}
+
 load();
+loadSources();
 setInterval(load, 5 * 60 * 1000);
+setInterval(loadSources, 5 * 60 * 1000);

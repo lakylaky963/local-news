@@ -20,3 +20,9 @@ article footer { display: flex; justify-content: space-between; align-items: cen
 .votes button.on { opacity: 1; }
 article.v1 { border-color: #3d6b3d; }
 article.v-1 { opacity: .55; }
+#sources { max-width: 760px; margin: 0 auto; padding: 12px 16px 24px; display: flex; flex-wrap: wrap;
+  gap: 6px 14px; color: var(--dim); font-size: 12px; border-top: 1px solid var(--line); }
+.src { display: inline-flex; align-items: center; gap: 5px; cursor: default; }
+.dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+.dot.ok { background: #4caf50; }
+.dot.bad { background: #e5484d; }

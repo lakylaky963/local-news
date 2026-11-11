@@ -10,7 +10,7 @@ Rules: see CLAUDE.md in this folder. Commit after each task. If blocked, note it
       (e.g. TheMarker/Bizportal if they have RSS) and one more tech source. Verify with fetch:dry.
 - [x] (2026-11-11) Unit tests with `node --test`: src/score.js (tokens on Hebrew+English titles, scoreItem ordering,
       rebuildProfile math with a stubbed db). Add `"test": "node --test"` script.
-- [ ] UI: thin sources-status strip at the bottom (from api/sources): green/red dot per source,
+- [x] (2026-11-11) UI: thin sources-status strip at the bottom (from api/sources): green/red dot per source,
       tooltip with lastStatus. Keep the house style.
 - [ ] UI: relative times in Hebrew for he items (לפני 5 ד׳ / שעה / אתמול), keep English for en.
 - [ ] Improve the Hebrew stopword list in src/score.js (common news words: דיווח, בלעדי, צפו, תיעוד...).
